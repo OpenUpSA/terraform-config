@@ -60,3 +60,8 @@ resource "aws_iam_policy" "policy" {
 }
 EOT
 }
+
+resource "aws_iam_user_policy_attachment" "attachment" {
+  user       = aws_iam_user.gov-za-scraper.name
+  policy_arn = aws_iam_policy.policy.arn
+}

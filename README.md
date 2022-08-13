@@ -8,7 +8,8 @@ This will create
 - The `gov-za-scraper` iam user
 - The bucket acl
 - An access key ID and secret for the user
-- A policy allowing the user to do everything with the bucket and list all buckets
+- A policy allowing everything with the bucket and list all buckets
+- Attach the policy to the user
 - Tag everything with a project slug
 
 Steps:
