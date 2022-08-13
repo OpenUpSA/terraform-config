@@ -17,9 +17,9 @@ Steps:
 2. Run `terraform init`
 3. If you have configured AWS CLI with a profile named `openup`, you can run
 
-    AWS_PROFILE=openup terraform plan
+       AWS_PROFILE=openup terraform plan
 
-   and so on to plan and apply changes to the AWS resources for this project in
+   and likewise with `terraform apply` to plan and apply changes to the AWS resources for this project in
    the OpenUp AWS account.
 
 # TODO:
@@ -31,3 +31,5 @@ Steps:
 - Configuration structure
   - How should we structure the config for the many projects we have at OpenUp?
     - This `cd` into the project directory approach doesn't seem great. It means there's a state file for each project and the terraform resource names are things like `aws_s3_bucket.bucket`. Each folder needs to be `init`d and so on. Should they all be modules included by a top level configuration?
+- Output credentials when creating them, or automatically store them in bitwarden
+  - I found the AWS secret access key in `terraform show -json | jq .` but is that really the way to do it?!
